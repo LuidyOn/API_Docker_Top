@@ -12,15 +12,9 @@ public class PessoaApiApplication {
 
 // Swagger = http://localhost:8080/swagger-ui/index.html
 
+
 // docker --version
 
-//docker ps
-
+// docker build -t pessoa-api .
 
 //docker build -t pessoa-api .
-
-//docker run -p 8080:8080 pessoa-api
-
-//http://localhost:8080/swagger-ui/index.html
-
-

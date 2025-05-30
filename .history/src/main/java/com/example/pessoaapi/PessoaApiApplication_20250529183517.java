@@ -14,8 +14,6 @@ public class PessoaApiApplication {
 
 // docker --version
 
-//docker ps
-
 
 //docker build -t pessoa-api .
 
