@@ -10,10 +10,12 @@ public class PessoaApiApplication {
     }
 }
 
-//siga as instruções abaixo para executar a aplicação com o Docker em execução:
+//siga as instruções abaixo para executar a aplicação:
 
-//1- PASTA RAIZ / CMD / EXECUTE: docker build -t pessoa-api .
+//1- docker build -t pessoa-api .
 
-//2- EXECUTE: docker run -p 8080:8080 pessoa-api
+//2- docker run -p 8080:8080 pessoa-api
 
-//3- ABRA NO SEU NAVEGADOR: http://localhost:8080/swagger-ui/index.html
+//http://localhost:8080/swagger-ui/index.html
+
+

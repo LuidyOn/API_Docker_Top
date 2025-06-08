@@ -1,8 +1,6 @@
 package com.example.pessoaapi.controller;
 
 import com.example.pessoaapi.model.Pessoa;
-
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -30,26 +28,20 @@ public class PessoaController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Pessoa> atualizar(@PathVariable(name = "id") Long id, @RequestBody Pessoa dados) {
+    public Pessoa atualizar(@PathVariable Long id, @RequestBody Pessoa dados) {
         Optional<Pessoa> pessoaOpt = pessoas.stream().filter(p -> p.getId().equals(id)).findFirst();
         if (pessoaOpt.isPresent()) {
             Pessoa p = pessoaOpt.get();
             p.setNome(dados.getNome());
             p.setIdade(dados.getIdade());
             p.setCargo(dados.getCargo());
-            return ResponseEntity.ok(p);
+            return p;
         }
-        return ResponseEntity.notFound().build();
+        return null;
     }
 
-
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deletar(@PathVariable(name = "id") Long id) {
-        boolean removido = pessoas.removeIf(p -> p.getId().equals(id));
-        if (removido) {
-            return ResponseEntity.noContent().build(); // 204 No Content
-        } else {
-            return ResponseEntity.notFound().build(); // 404 Not Found
-        }
+    public void deletar(@PathVariable Long id) {
+        pessoas.removeIf(p -> p.getId().equals(id));
     }
 }

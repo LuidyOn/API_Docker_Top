@@ -30,7 +30,7 @@ public class PessoaController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Pessoa> atualizar(@PathVariable(name = "id") Long id, @RequestBody Pessoa dados) {
+    public ResponseEntity<Pessoa> atualizar(@PathVariable Long id, @RequestBody Pessoa dados) {
         Optional<Pessoa> pessoaOpt = pessoas.stream().filter(p -> p.getId().equals(id)).findFirst();
         if (pessoaOpt.isPresent()) {
             Pessoa p = pessoaOpt.get();

@@ -10,6 +10,8 @@ import java.util.List;
 import java.util.Optional;
 import java.util.concurrent.atomic.AtomicLong;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
+
 @RestController
 @RequestMapping("/pessoas")
 public class PessoaController {
@@ -30,7 +32,7 @@ public class PessoaController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Pessoa> atualizar(@PathVariable(name = "id") Long id, @RequestBody Pessoa dados) {
+    public ResponseEntity<Pessoa> atualizar(@PathVariable Long id, @RequestBody Pessoa dados) {
         Optional<Pessoa> pessoaOpt = pessoas.stream().filter(p -> p.getId().equals(id)).findFirst();
         if (pessoaOpt.isPresent()) {
             Pessoa p = pessoaOpt.get();

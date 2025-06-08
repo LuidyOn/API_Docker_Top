@@ -1,4 +1,4 @@
-package com.example.pessoaapi.model;
+package com.example.pessoaapi.model; //o que representa essa estrutura package?
 
 public class Pessoa {
     private Long id;

@@ -1,7 +1,7 @@
-package com.example.pessoaapi.model;
+package com.example.pessoaapi.model; //o que representa e como funciona essa estrutura package?
 
 public class Pessoa {
-    private Long id;
+    private Long id; // pq usar o long e?
     private String nome;
     private int idade;
     private String cargo;
